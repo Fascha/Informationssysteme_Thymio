@@ -89,6 +89,18 @@ public class AStar {
 			if (current.x - 1 >= 0) {
 				t = grid[current.x - 1][current.y];
 				checkAndUpdateCost(current, t, current.finalCost + MOVE_COST);
+				
+	//          if(current.j-1>=0){                      
+	//              t = grid[current.i-1][current.j-1];
+	//              checkAndUpdateCost(current, t, current.finalCost+DIAGONAL_COST); 
+	//          }
+	//
+	//          if(current.j+1<grid[0].length){
+	//              t = grid[current.i-1][current.j+1];
+	//              checkAndUpdateCost(current, t, current.finalCost+DIAGONAL_COST); 
+	//          }
+				
+				
 			}
 			if (current.y - 1 >= 0) {
 				t = grid[current.x][current.y - 1];
@@ -96,11 +108,21 @@ public class AStar {
 			}
 			if (current.y + 1 < grid[0].length) {
 				t = grid[current.x][current.y + 1];
-				checkAndUpdateCost(current, t, current.finalCost + MOVE_COST);;
+				checkAndUpdateCost(current, t, current.finalCost + MOVE_COST);
 			}
 			if (current.x + 1 < grid[0].length) {
 				t = grid[current.x + 1][current.y];
-				checkAndUpdateCost(current, t, current.finalCost + MOVE_COST);;
+				checkAndUpdateCost(current, t, current.finalCost + MOVE_COST);
+				
+	//          if(current.j-1>=0){
+	//              t = grid[current.i+1][current.j-1];
+	//              checkAndUpdateCost(current, t, current.finalCost+DIAGONAL_COST); 
+	//          }
+	//          
+	//          if(current.j+1<grid[0].length){
+	//             t = grid[current.i+1][current.j+1];
+	//             checkAndUpdateCost(current, t, current.finalCost+DIAGONAL_COST); 
+	//          }  
 			}			
 		}
 	}
